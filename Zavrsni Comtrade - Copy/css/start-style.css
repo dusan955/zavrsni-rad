@@ -1,0 +1,81 @@
+#login-btn-desno {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #2e63e7;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: 50px;
+   
+  }
+  #login-btn-desno span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  #login-btn-desno span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+ #login-btn-desno:hover span {
+    padding-right: 25px;
+  }
+  #login-btn-desno:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  a{
+      color: white;
+      text-decoration: none;
+  }
+
+  #login-btn-levo {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #2e63e7;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 120px;
+    transition: all 0.5s;
+    cursor: pointer;
+   
+  }
+  #login-btn-levo span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  #login-btn-levo span:after {
+    content: '\00ab';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 10px;
+    transition: 0.5s;
+  }
+ #login-btn-levo:hover span {
+    padding-left: 20px;
+  }
+  #login-btn-levo:hover span:after {
+    opacity: 1;
+    left: 0;
+  }
+  #container-flex{
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+  }

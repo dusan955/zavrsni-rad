@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Učenik LogIn</title>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ'
+    crossorigin='anonymous'>
+  <link rel="stylesheet" href="css/ucenik-login.css">
+</head>
+
+<body>
+  <!-- login student-->
+  <form action="" autocomplete="off"  method="post" id="login-form">
+    <span id="login-ucenik-broj-indexa-span"> Broj indexa:<br> <br> Redni broj (ID)
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Smer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Godina Upisa <br> <br>
+    </span>
+    <div id="login-ucenik-broj-indexa-div">
+      <input type="number"  id="ucenikLoginRedniBroj"  min="1" max="200">
+      <span>&nbsp;/&nbsp;</span>
+      <select name="smer" id="ucenikLoginSmer" required>
+        <option value="a">Smer A-MENADŽMENT</option>
+        <option value="b">Smer B-EKONOMIJA</option>
+        <option value="c">Smet C-ELEKTRONSKI BIZNIS</option>
+      </select>
+      <span>&nbsp;/&nbsp;</span>
+      <select name="godinaUpisa" id="ucenikLoginGodinaUpisa" required>
+        <option value="2018">2018</option>
+        <option value="2017">2017</option>
+        <option value="2016">2016</option>
+      </select>
+    </div>
+    <hr>
+    <span class="login-podaci-dole"> Šifra: <input type="password" id="sifra-login" class="inputField" required></span><br>
+    <button type="submit" id="login-btn"><span>Prijavi se</span></button><br>
+  </form>
+
+  <!--sadrzaj -->
+  <div id="ulogovan">
+    <div class="navbar">
+      <a href="#">Početna </a>
+      <a href="#">Profil </a>
+      <a href="nastavno-osoblje.html">Nastavno osoblje</a>
+      <div class="dropdown">
+        <button class="dropbtn">Lista predmeta
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="smer-a.html">Smer A - Menadžment</a>
+          <a href="smer-b.html">Smer B - Ekonomija</a>
+          <a href="smer-c.html">Smer C - Elektronski biznis</a>
+        </div>
+      </div>
+      <div id="ulogovaniKorisnik">
+        <span id="ulogovaniKorisnikPodaci" class='fas fa-user-tag'> : <span id="imeUlogovanogKorisnika"></span></span>
+        <a id="logout" class="fas fa-sign-out-alt"> Izloguj Se</a>
+      </div>
+    </div>
+    <div class="carousel">
+      <div class="carousel-inner">
+        <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+        <div class="carousel-item">
+          <img src="slike/e-biz.png">
+        </div>
+        <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+        <div class="carousel-item">
+          <img src="slike/ekonomija.png">
+        </div>
+        <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+        <div class="carousel-item">
+          <img src="slike/menadzment.png">
+        </div>
+        <label for="carousel-3" class="carousel-control prev control-1">‹</label>
+        <label for="carousel-2" class="carousel-control next control-1">›</label>
+        <label for="carousel-1" class="carousel-control prev control-2">‹</label>
+        <label for="carousel-3" class="carousel-control next control-2">›</label>
+        <label for="carousel-2" class="carousel-control prev control-3">‹</label>
+        <label for="carousel-1" class="carousel-control next control-3">›</label>
+        <ol class="carousel-indicators">
+          <li>
+            <label for="carousel-1" class="carousel-bullet">•</label>
+          </li>
+          <li>
+            <label for="carousel-2" class="carousel-bullet">•</label>
+          </li>
+          <li>
+            <label for="carousel-3" class="carousel-bullet">•</label>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <script src="js/ls.js"></script>
+  <script src="js/ucenik-js.js"></script>
+
+</body>
+
+</html>

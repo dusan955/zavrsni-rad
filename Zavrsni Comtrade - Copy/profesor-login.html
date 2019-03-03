@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profesor LogIn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ'
+        crossorigin='anonymous'>
+    <link rel="stylesheet" href="css/profesor-login.css">
+</head>
+
+<body>
+    <!-- registracija profesora-->
+    <form action="" id="register-form" method="post">
+        E-mail:<input type="text" id="email" required> <br>
+        Ime: <input type="text" id="ime" required> <br>
+        Prezime:<input type="text" id="prezime" required> <br>
+        Šifra: <input type="password" id="sifra" required><br>
+        Ponovi šifru: <input type="password" id="sifra-validacija" required><br>
+
+        Odgovor: <input type="text" id="odgovor" required> <br>
+        <input type="submit" value="Registracija"><br>
+    </form>
+
+    <!-- Login profesora-->
+    <div>
+        <form action="" method="post" autocomplete="off" id="login-form">
+            <span> E-mail: <input type="email" id="email-login" class="inputField" required> <br> </span>
+            <span> Šifra: <input type="password" id="sifra-login" class="inputField" required></span><br>
+            <span>Nemaš nalog? <a href="" id="link-register">Registruj se</a></span><br>
+            <span><a href="" id="link-reminder">Zaboravio sam šifru</a></span> <br> <br>
+            <button type="submit" id="login-btn"><span>Prijavi se</span></button><br>
+        </form>
+    </div>
+    <!-- reminder form-->
+    <form action="" method="post" id="reminder-form">
+        <h2>Zaboravljena šifra</h2>
+        user <input type="text" id="email-reminder">
+        <input type="submit" value="Pošalji">
+    </form>
+    <!--  Sadrzaj -->
+    <div id="ulogovan">
+        <!-- The sidebar -->
+        <div class="sidebar">
+            <a class="active" href="#home">Home</a>
+            <a href="#dodajStudenta">Dodaj Studenta</a>
+            <a href="#dodajOcenu">Dodaj ocenu</a>
+            <a href="#">Obrisi ocenu</a>
+            <a href="#">Dodaj napomenu</a>
+            <div id="ulogovaniKorisnik">
+                &nbsp; &nbsp; <span id="ulogovaniKorisnikPodaci" class='fas fa-user-tag'> : <span id="imeUlogovanogKorisnika"></span></span>
+
+            </div>
+            <a id="logout" class="fas fa-sign-out-alt"> Izloguj Se</a>
+        </div>
+        <!-- Page content -->
+        <div class="content">
+            <div class="sekcije">
+                <form action="" method="post" class="form-dodajStudenta" autocomplete="off" id="dodajStudenta">
+                    <h3>Dodaj Studenta</h3>
+                    <span id="dodaj-studenta-broj-indexa-span"> Broj indexa:<br> <br> Redni broj
+                        (ID)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Smer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Godina Upisa <br> <br>
+                    </span>
+                    <div id="dodaj-studenta-broj-indexa-div">
+                        <span>&nbsp;&nbsp;&nbsp;</span>
+                        <input type="number" class="input-profesor-admin" id="dodajStudentaRedniBroj" min="1" max="200">
+                        <span>&nbsp;/&nbsp;</span>
+                        <select name="smer" id="dodajStudentaSmer" required>
+                            <option value="a">Smer A-MENADŽMENT</option>
+                            <option value="b">Smer B-EKONOMIJA</option>
+                            <option value="c">Smet C-ELEKTRONSKI BIZNIS</option>
+                        </select>
+                        <span>&nbsp;/&nbsp;</span>
+                        <select name="smer" id="dodajStudentaGodinaUpisa" required>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                        </select>
+                    </div>
+                    <br>
+                    <span> Ime i prezime: <br><input type="text" class="input-profesor-admin" id="dodajStudentaImePrezime"
+                            required></span><br>
+                    <span> Sifra: <br> <input type="text" class="input-profesor-admin" id="dodajStudentaSifra" required></span><br>
+                    <span> Email: <br> <input type="email" name="" class="input-profesor-admin" id="dodajStudentaEmail"
+                            required></span> <br><br>
+                    <input type="submit" value="Dodaj">
+                </form>
+            </div>
+            <hr>
+            <div class="sekcije">
+                <form action="" method="post" class="form-dodajStudenta" autocomplete="off" id="dodajOcenu">
+                    <h3>Dodaj Ocenu</h3>
+                    <span id="dodaj-ocenu-broj-indexa-span"> Broj indexa:<br> <br> Redni broj
+                        (ID)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Smer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Godina Upisa <br> <br>
+                    </span>
+                    <div id="dodaj-ocenu-broj-indexa-div">
+                        <span>&nbsp;&nbsp;&nbsp;</span>
+                        <input type="number" class="input-profesor-admin" id="dodajOcenuRedniBroj" min="1" max="200">
+                        <span>&nbsp;/&nbsp;</span>
+                        <select name="smer" id="dodajOcenuSmer" required>
+                            <option value="x">Izaberite smer</option>
+                            <option value="a">Smer A-MENADŽMENT</option>
+                            <option value="b">Smer B-EKONOMIJA</option>
+                            <option value="c">Smet C-ELEKTRONSKI BIZNIS</option>
+                        </select>
+                        <span>&nbsp;/&nbsp;</span>
+                        <select name="smer" id="dodajOcenuGodinaUpisa" required>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <span>Predmet:</span>
+                    <div id="selectListaPredmet"></div> <br>
+                    <span> Ocena: <br> <input type="number" min="6" max="10" class="input-profesor-admin" id="dodajOcenuOcena">
+                    </span><br>
+                    <br>
+                    <input type="submit" value="Dodaj">
+                </form>
+            </div>
+            <div class="sekcije">
+                <form action="" method="post" class="form-dodajStudenta" autocomplete="off" id="obrisiOcenu">
+                    <h3>Obrisi Ocenu</h3>
+                    <span id="obrisi-ocenu-broj-indexa-span"> Broj indexa:<br> <br> Redni broj
+                        (ID)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Smer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Godina Upisa <br> <br>
+                    </span>
+                    <div id="obrisi-ocenu-broj-indexa-div">
+                        <span>&nbsp;&nbsp;&nbsp;</span>
+                        <input type="number" class="input-profesor-admin" id="obrisiOcenuRedniBroj" min="1" max="200">
+                        <span>&nbsp;/&nbsp;</span>
+                        <select name="smer" id="obrisiOcenuSmer" required>
+                            <option value="x">Izaberite smer</option>
+                            <option value="a">Smer A-MENADŽMENT</option>
+                            <option value="b">Smer B-EKONOMIJA</option>
+                            <option value="c">Smet C-ELEKTRONSKI BIZNIS</option>
+                        </select>
+                        <span>&nbsp;/&nbsp;</span>
+                        <select name="smer" id="obrisiOcenuGodinaUpisa" required>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <span>Predmet:</span>
+                    <div id="selectListaPredmetObrisiOcenu"></div> <br>
+
+                    </span><br>
+                    <br>
+                    <input type="submit" value="Obrisi">
+                </form>
+            </div>
+            <div class="sekcije">
+                <form action="" method="post" class="form-dodajStudenta" autocomplete="off" id="dodajNapomenu">
+                    <h3>Dodaj napomenu</h3>
+                    <span id="dodaj-napomenu-broj-indexa-span"> Broj indexa:<br> <br> Redni broj
+                        (ID)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Smer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Godina Upisa <br> <br>
+                    </span>
+                    <div id="dodaj-napomenu-broj-indexa-div">
+                        <span>&nbsp;&nbsp;&nbsp;</span>
+                        <input type="number" class="input-profesor-admin" id="dodajNapomenuRedniBroj" min="1" max="200">
+                        <span>&nbsp;/&nbsp;</span>
+                        <select name="smer" id="dodajNapomenuSmer" required>
+                            <option value="a">Smer A-MENADŽMENT</option>
+                            <option value="b">Smer B-EKONOMIJA</option>
+                            <option value="c">Smet C-ELEKTRONSKI BIZNIS</option>
+                        </select>
+                        <span>&nbsp;/&nbsp;</span>
+                        <select name="smer" id="dodajNapomenuGodinaUpisa" required>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                        </select>
+                    </div>
+                    <br><br>
+                    <h5>Napomena:</h5>
+                    <textarea type="text" name="napomena" id="dodajNapomenuNapomena" cols="40" rows="10"></textarea>
+                    <br>
+                    <input type="submit" value="Dodaj">
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/ls.js"></script>
+    <script src="js/smerovi.js"></script>
+    <script src="js/profesor-js.js"></script>
+    <script src="js/dodaj-ocenu.js"></script>
+    <script src="js/obrisi-ocenu.js"></script>
+    <script src="js/dodaj-napomenu.js"></script>
+
+</body>
+
+</html>
